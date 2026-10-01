@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>TV 回测记录器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>TV 回测记录器</h1>
+    <span id="summary" class="summary">—</span>
+  </header>
+
+  <div class="acts">
+    <button id="btnCopyPending" class="primary">复制全部记录</button>
+    <button id="btnClearExported">清空记录</button>
+  </div>
+
+  <div id="list" class="list"></div>
+
+  <footer>
+    这里只是台账备份。复制时截图直接进剪贴板，不落任何文件。
+  </footer>
+
+  <script src="../shared/columns.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

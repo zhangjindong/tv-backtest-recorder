@@ -1,0 +1,19 @@
+# ---- 操作系统 / 编辑器 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---- Office / WPS 临时锁文件 ----
+~$*
+
+# ---- 日志与调试产物 ----
+*.log
+*.tmp
+
+# ---- Python（仓库内辅助脚本产生的缓存）----
+__pycache__/
+*.pyc

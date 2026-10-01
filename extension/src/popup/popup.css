@@ -1,0 +1,90 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 560px;
+  max-height: 560px;
+  display: flex;
+  flex-direction: column;
+  font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #1f2328;
+  background: #fff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e3e6ea;
+}
+
+h1 { font-size: 13px; font-weight: 600; flex: 1; }
+
+.summary { font-size: 11px; color: #57606a; }
+
+.acts {
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e3e6ea;
+  background: #f6f8fa;
+}
+
+button {
+  border: 1px solid rgba(0, 0, 0, .15);
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  cursor: pointer;
+  color: #1f2328;
+}
+
+button:hover:not(:disabled) { background: #eef1f4; }
+button:disabled { opacity: .5; cursor: default; }
+
+button.primary {
+  background: #1f6feb;
+  border-color: #1f6feb;
+  color: #fff;
+  font-weight: 500;
+}
+
+button.primary:hover:not(:disabled) { background: #1a63d4; }
+
+.list { flex: 1; overflow-y: auto; padding: 4px 0; }
+
+.empty { padding: 28px 12px; text-align: center; color: #8b949e; }
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-bottom: 1px solid #f0f2f4;
+}
+
+.row:hover { background: #fafbfc; }
+
+.row .t { width: 118px; color: #57606a; font-size: 11px; flex: none; }
+.row .sym { width: 74px; font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .dir { width: 20px; text-align: center; font-size: 11px; font-weight: 600; }
+.row .dir.long { color: #d1242f; }
+.row .dir.short { color: #1a7f37; }
+.row .px { flex: 1; font-family: ui-monospace, Consolas, monospace; font-size: 11px; color: #24292f; }
+.row .st { width: 46px; font-size: 10.5px; color: #8b949e; flex: none; }
+.row .st.done { color: #1a7f37; }
+.row .mini { padding: 2px 7px; font-size: 10.5px; }
+
+footer {
+  padding: 7px 12px;
+  border-top: 1px solid #e3e6ea;
+  font-size: 10.5px;
+  color: #8b949e;
+  background: #f6f8fa;
+}
+
+footer code {
+  font-family: ui-monospace, Consolas, monospace;
+  color: #57606a;
+}

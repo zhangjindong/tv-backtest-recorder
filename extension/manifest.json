@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "TV 回测记录器",
+  "version": "1.0.0",
+  "description": "回测时读取 TradingView 仓位工具的开仓/止损/止盈价 + 全屏截图，可粘进 Excel，也可直接导出带「嵌入单元格图片」的 xlsx 台账。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "action": {
+    "default_title": "TV 回测记录器",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.tradingview.com/*"],
+      "js": ["src/main-world/tv-bridge.js"],
+      "world": "MAIN",
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": ["https://*.tradingview.com/*"],
+      "js": ["src/shared/columns.js", "src/shared/xlsx.js", "src/content/content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
